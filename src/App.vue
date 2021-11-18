@@ -1,30 +1,48 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+
+  <div v-if="!texts" class="spinner">
+    <SpinningWheel />
   </div>
-  <router-view/>
+  <div v-else>
+    <Navigation />
+    <Footer />
+  </div>
+
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { onMounted, computed } from 'vue';
+import { useStore } from 'vuex';
 
-#nav {
-  padding: 30px;
+import Navigation from './components/Navigation.vue'
+import Footer from './components/Footer.vue'
+import SpinningWheel from './components/SpinningWheel.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  name: 'App',
+  components: {
+    Navigation,
+    Footer,
+    SpinningWheel
+  },
+  setup() {
+    const store = useStore();
+    const texts = computed(()=> store.state.texts);
+
+    onMounted(()=> {
+      store.dispatch('getTexts','eng')
+    });
+
+    return {
+      texts
     }
   }
 }
+</script>
+
+<style lang="scss" scoped>
+  .spinner {
+    padding: 40vh 50vh;
+  }
 </style>
