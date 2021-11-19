@@ -23,5 +23,3 @@ export default createStore({
   modules: {
   }
 })
-
-// TODO: agregar mutation que actualice las rutas con router.addRoutes() y llamarlo desde la action de getTexts
