@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    
+    lang: 'eng'
   },
   mutations: {
     setTexts(state, payload) {
@@ -23,3 +23,5 @@ export default createStore({
   modules: {
   }
 })
+
+// TODO: agregar mutation que actualice las rutas con router.addRoutes() y llamarlo desde la action de getTexts

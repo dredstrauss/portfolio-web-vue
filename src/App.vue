@@ -31,7 +31,7 @@ export default {
     const texts = computed(()=> store.state.texts);
 
     onMounted(()=> {
-      store.dispatch('getTexts','eng')
+      store.dispatch('getTexts',store.state.lang)
     });
 
     return {
