@@ -1,10 +1,16 @@
 <template>
 
-  <Hero :title="texts.blog.hero.title" :subtitle="texts.blog.hero.subtitle" />
+  <div v-if="!blogTexts" class="spinner">
+    <SpinningWheel />
+  </div>
+  <div v-else>
+    <Hero :title="texts.blog.hero.title" :subtitle="texts.blog.hero.subtitle" />
+  </div>
 
 </template>
 
 <script>
+import { onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
 
 import Hero from '../components/Hero.vue'
@@ -19,9 +25,15 @@ export default {
   setup() {
     const store = useStore();
     const texts = store.state.texts;
+    const blogTexts = computed(()=> store.state.blogTexts);
+
+    onMounted(()=> {
+      store.dispatch('getBlogTexts',store.state.lang)
+    });
 
     return {
-      texts
+      texts,
+      blogTexts
     }
   }
 }
