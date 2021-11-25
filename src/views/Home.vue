@@ -4,6 +4,7 @@
 
 <script>
 import { useStore } from 'vuex';
+import { computed } from 'vue';
 import Hero from '../components/Hero.vue'
 
 export default {
@@ -13,8 +14,8 @@ export default {
   },
   setup() {
     const store = useStore();
-    const title = store.state.texts.site.main.name;
-    const subtitle = store.state.texts.site.main.title;
+    const title = computed(()=> store.state.texts.site.main.name);
+    const subtitle = computed(() => store.state.texts.site.main.title);
 
     return {
       title,

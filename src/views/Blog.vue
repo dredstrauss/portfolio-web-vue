@@ -29,7 +29,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    const texts = store.state.texts;
+    const texts = computed(() => store.state.texts);
     const blogTexts = computed(()=> store.state.blogTexts);
 
     onMounted(()=> {

@@ -4,6 +4,7 @@
 
 <script>
 import { useStore } from 'vuex'
+import { computed } from 'vue'
 import Hero from '../components/Hero.vue'
 
 export default {
@@ -13,7 +14,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    const texts = store.state.texts;
+    let texts = store.state.texts;
 
     return {
       texts

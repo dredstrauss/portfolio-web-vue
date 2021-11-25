@@ -10,6 +10,9 @@ export default createStore({
     },
     setBlogTexts(state, payload) {
       state.blogTexts = payload;
+    },
+    setLang(state, payload) {
+      state.lang = payload;
     }
   },
   actions: {
@@ -30,6 +33,9 @@ export default createStore({
       } catch (error) {
         console.log(error);
       }
+    },
+    switchLang({commit}, lang) {
+      commit('setLang', lang);
     }
   },
   modules: {
