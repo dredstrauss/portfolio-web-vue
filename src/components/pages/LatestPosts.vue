@@ -2,7 +2,7 @@
   <div class="main-section">
     <section class="container py-5">
       <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-4" v-for="(post, index) in posts" :key="index">
+        <div class="col-11 col-sm-6 col-md-4" v-for="(post, index) in posts" :key="index">
           <h4>{{ post.title }}</h4>
           <p class="fw-bold">{{ post.summary }}</p>
         </div>
