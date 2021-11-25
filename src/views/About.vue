@@ -14,7 +14,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    let texts = store.state.texts;
+    let texts = computed(()=>store.state.texts);
 
     return {
       texts
