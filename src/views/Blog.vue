@@ -4,7 +4,10 @@
     <SpinningWheel />
   </div>
   <div v-else>
+
     <Hero :title="texts.blog.hero.title" :subtitle="texts.blog.hero.subtitle" />
+    <LatestPosts :posts="blogTexts" />
+
   </div>
 
 </template>
@@ -15,12 +18,14 @@ import { useStore } from 'vuex'
 
 import Hero from '../components/Hero.vue'
 import SpinningWheel from '../components/SpinningWheel.vue'
+import LatestPosts from '../components/pages/LatestPosts.vue'
 
 export default {
   name: 'Blog',
   components: {
     Hero,
-    SpinningWheel
+    SpinningWheel,
+    LatestPosts
   },
   setup() {
     const store = useStore();
