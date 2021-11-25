@@ -39,9 +39,9 @@ export default {
       };
 
       const switchLang = () => {
-          console.log(lang.value + ' -> ' + altLang());
         store.dispatch('switchLang',altLang());
         store.dispatch('getTexts',lang.value);
+        store.dispatch('getBlogTexts',lang.value);
       }
 
     return {
