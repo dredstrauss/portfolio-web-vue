@@ -13,7 +13,8 @@ export default createStore({
       state.blogTexts = payload;
     },
     setLang(state, payload) {
-      state.lang = payload;
+        localStorage.setItem('lang',payload)
+        state.lang = payload;
     },
     setRoutes(state, payload){
         state.texts.site.menu = [];

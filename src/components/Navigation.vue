@@ -30,7 +30,7 @@ export default {
     name: "Navigation",
     setup() {
         const store = useStore();
-        let texts = computed(()=>store.state.texts);
+        let texts = computed(()=> store.state.texts);
         let lang = computed(() => store.state.lang);
 
         const altLang = () => {

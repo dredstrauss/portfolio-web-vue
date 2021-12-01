@@ -29,9 +29,18 @@ export default {
   setup() {
     const store = useStore();
     const texts = computed(()=> store.state.texts);
+    const lang = computed(() => store.state.lang);
 
     onMounted(()=> {
-      store.dispatch('getTexts',store.state.lang)
+        if (localStorage.getItem('lang') == null) {
+            localStorage.setItem('lang',lang.value)
+            store.dispatch('getTexts',lang.value)
+        } else {
+            let localLang = localStorage.getItem('lang');
+            store.dispatch('switchLang',localLang)
+            store.dispatch('getTexts',lang.value)
+            store.dispatch('getBlogTexts',lang.value);
+        }
     });
 
     return {
