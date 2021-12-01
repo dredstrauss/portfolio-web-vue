@@ -1,8 +1,10 @@
 <template>
     <section class="py-5" :style="cssProps" >
-        <div class="container mt-5" >
-            <h1>{{ title }}</h1>
-            <h4>{{ subtitle }}</h4>
+        <div class="row container mt-5" >
+            <div class="col-10 col-lg-6 ms-5">
+                <h1>{{ title }}</h1>
+                <h4>{{ subtitle }}</h4>
+            </div>
         </div>
     </section>
 </template>
