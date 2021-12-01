@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { router } from '../router'
 
 export default createStore({
   state: {
@@ -13,6 +14,26 @@ export default createStore({
     },
     setLang(state, payload) {
       state.lang = payload;
+    },
+    setRoutes(state, payload){
+        state.texts.site.menu = [];
+        router.getRoutes().forEach(route => {
+            if (route.name !== 'Home') {
+                router.removeRoute(route.name)
+            }
+        });
+        Object.keys(payload).forEach((sectionKey) => {
+            let sectionCapKey = sectionKey.charAt(0).toUpperCase() + sectionKey.slice(1);
+            let name = payload[sectionKey];
+            let path = `/${name.toLowerCase()}`;
+            let component = () => import(`../views/${sectionCapKey}.vue`);
+            router.addRoute({
+                path: path,
+                name: name,
+                component: component
+            });
+            state.texts.site.menu.push({path:path,name:name});
+        });
     }
   },
   actions: {
@@ -21,6 +42,7 @@ export default createStore({
         const response = await fetch(`http://bookapi.pedrosg.com/lang-strings?lang=${lang}`);
         const result = await response.json();
         commit('setTexts', result);
+        commit('setRoutes', result.site.nav);
       } catch (error) {
         console.log(error);
       }

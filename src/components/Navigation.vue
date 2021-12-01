@@ -10,7 +10,7 @@
                     <li class="nav-item">
                         <a href="#" @click="switchLang" class="nav-link">[ {{ altLang() }} ]</a>
                     </li>
-                    <li class="nav-item" v-for="route in routes" :key="route.name">
+                    <li class="nav-item" v-for="route in texts.site.menu" :key="route.path">
                         <template v-if="route.name !== 'Home'">
                             <router-link class="nav-link" :to="route.path">{{ route.name }}</router-link>
                         </template>
@@ -25,31 +25,31 @@
 <script>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-import { routes } from '../router';
 
 export default {
-  name: "Navigation",
-  setup() {
-      const store = useStore();
-      let lang = computed(() => store.state.lang);
-      
-      const altLang = () => {
-          const otherLang = lang.value === 'eng' ? 'esp' : 'eng';
-          return otherLang
-      };
+    name: "Navigation",
+    setup() {
+        const store = useStore();
+        let texts = computed(()=>store.state.texts);
+        let lang = computed(() => store.state.lang);
 
-      const switchLang = () => {
-        store.dispatch('switchLang',altLang());
-        store.dispatch('getTexts',lang.value);
-        store.dispatch('getBlogTexts',lang.value);
-      }
+        const altLang = () => {
+            const otherLang = lang.value === 'eng' ? 'esp' : 'eng';
+            return otherLang
+        };
 
-    return {
-        routes,
-        switchLang,
-        altLang
+        const switchLang = () => {
+            store.dispatch('switchLang',altLang());
+            store.dispatch('getTexts',lang.value);
+            store.dispatch('getBlogTexts',lang.value);
+        }
+
+        return {
+            switchLang,
+            altLang,
+            texts
+        }
     }
-  }
 };
 </script>
 
