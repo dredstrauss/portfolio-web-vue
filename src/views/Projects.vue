@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="texts.projects.hero.title" :subtitle="texts.projects.hero.subtitle" />
+  <Hero :title="texts.projects.hero.title" :subtitle="texts.projects.hero.subtitle" :bgimage="require(`@/assets/img/${texts.projects.hero.bgimage || texts.home.hero.bgimage}`)" />
   <PreviewItems :items="projectsArray()" />
 </template>
 

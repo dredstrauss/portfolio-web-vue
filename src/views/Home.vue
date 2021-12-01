@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="title" :subtitle="subtitle" />
+  <Hero :title="texts.home.hero.title" :subtitle="texts.home.hero.subtitle" :bgimage="require(`@/assets/img/${texts.home.hero.bgimage}`)" />
 </template>
 
 <script>
@@ -14,12 +14,10 @@ export default {
   },
   setup() {
     const store = useStore();
-    const title = computed(()=> store.state.texts.site.main.name);
-    const subtitle = computed(() => store.state.texts.site.main.title);
+    const texts = computed(()=> store.state.texts);
 
     return {
-      title,
-      subtitle
+      texts
     }
   }
 }

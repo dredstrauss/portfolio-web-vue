@@ -1,33 +1,51 @@
 <template>
-  <section class="py-5">
-      <div class="container">
-        <h1>{{ title }}</h1>
-        <h4>{{ subtitle }}</h4>
-      </div>
-  </section>
+    <section class="py-5" :style="cssProps" >
+        <div class="container mt-5" >
+            <h1>{{ title }}</h1>
+            <h4>{{ subtitle }}</h4>
+        </div>
+    </section>
 </template>
 
 <script>
+
 export default {
     name: 'Hero',
     props: {
-      title: {
-        type: String,
-        default: ' '
-      },
-      subtitle: {
-        type: String,
-        default: ' '
-      }
+        title: {
+            type: String,
+            default: ''
+        },
+        subtitle: {
+            type: String,
+            default: ''
+        },
+        bgimage: {
+            type: String,
+            default: ''
+        }
+    },
+    setup(props) {
+        const bgimage = props.bgimage;
+        const cssProps = { '--background-hero': `url(${bgimage})` };
+
+        return {
+            cssProps,
+            bgimage
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
     section {
-        background-color: black;
         border-top: 1px solid;
         border-bottom: 2px solid;
-        border-color: rgba(250,250,250,0.3);
+        border-color: rgba(200,200,200,1);
+        background-color: black;
+        background: linear-gradient(0deg,rgba(0,0,0,0.25), rgba(0,0,0,0.75)), var(--background-hero);
+        background-size: cover;
+        background-position: right;
+        height: 50vh;
     }
 </style>
