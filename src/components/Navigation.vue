@@ -2,11 +2,11 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <router-link class="navbar-brand" to="/">PedroSG</router-link>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarBar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarBar">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item">
                         <a href="#" @click="switchLang" class="nav-link">[ {{ altLang() }} ]</a>
                     </li>
