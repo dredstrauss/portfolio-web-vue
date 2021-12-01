@@ -26,5 +26,8 @@ export default {
 <style lang="scss" scoped>
     section {
         background-color: black;
+        border-top: 1px solid;
+        border-bottom: 2px solid;
+        border-color: rgba(250,250,250,0.3);
     }
 </style>

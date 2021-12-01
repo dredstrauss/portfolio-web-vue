@@ -26,10 +26,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-    .main-section {
-        border-top: 1px solid;
-        border-bottom: 1px solid;
-        border-color: rgba(255,255,255,0.25);
-    }
+<style>
 </style>
