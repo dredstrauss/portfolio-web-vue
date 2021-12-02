@@ -31,22 +31,25 @@ export default {
 
         let inRoute = route.params.catchAll;
 
-        if (checkRoute(inRoute)) {
-            router.push(`/${inRoute}`)
-        } else {
-            let localLang = localStorage.getItem('lang');
-            const otherLang = localLang === 'eng' ? 'esp' : 'eng';
-            store.dispatch('switchLang',otherLang);
-            store.dispatch('getTexts',otherLang).then(() => {
-                store.dispatch('getBlogTexts',otherLang);
-            }).then(()=> {
-                if (checkRoute(inRoute)) {
-                    router.push(`/${inRoute}`)
-                } else {
-                    router.push(`/`)
-                }
-            })
+        if (inRoute !== undefined) {
+            if (checkRoute(inRoute)) {
+                router.push(`/${inRoute}`)
+            } else {
+                let localLang = localStorage.getItem('lang');
+                const otherLang = localLang === 'eng' ? 'esp' : 'eng';
+                store.dispatch('switchLang',otherLang);
+                store.dispatch('getTexts',otherLang).then(() => {
+                    store.dispatch('getBlogTexts',otherLang);
+                }).then(()=> {
+                    if (checkRoute(inRoute)) {
+                        router.push(`/${inRoute}`)
+                    } else {
+                        router.push(`/`)
+                    }
+                })
+            }
         }
+
     });
 
     return {
