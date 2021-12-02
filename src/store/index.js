@@ -44,6 +44,7 @@ export default createStore({
         const result = await response.json();
         commit('setTexts', result);
         commit('setRoutes', result.site.nav);
+        return result
       } catch (error) {
         console.log(error);
       }
@@ -53,6 +54,7 @@ export default createStore({
         const response = await fetch(`http://bookapi.pedrosg.com/blog-strings?lang=${lang}`);
         const result = await response.json();
         commit('setBlogTexts', result);
+        return result
       } catch (error) {
         console.log(error);
       }

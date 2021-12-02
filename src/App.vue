@@ -12,12 +12,11 @@
 
 <script>
 import { onMounted, computed } from 'vue';
-import { useStore } from 'vuex';
+import { useStore} from 'vuex';
 
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import SpinningWheel from './components/SpinningWheel.vue'
-
 
 export default {
   name: 'App',
