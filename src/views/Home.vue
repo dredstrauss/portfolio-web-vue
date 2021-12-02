@@ -5,9 +5,10 @@
 <script>
 import { useStore } from 'vuex';
 import { onMounted, computed } from 'vue';
-import Hero from '../components/Hero.vue'
 import { useRoute } from 'vue-router'
 import { router } from '../router'
+
+import Hero from '../components/Hero.vue'
 
 export default {
   name: 'Home',
