@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$body-bg: #212529;
+$dark-blue-pedrosg: #070b15;
+$blue-pedrosg: #0b1728;
+
+// $body-bg: #212529; // Bootstrap dark default
+$body-bg: $dark-blue-pedrosg;
 $body-color: #ced4da;
 $link-color: #fff;
+
 
 $font-family-sans-serif: 'Volkhov', serif;
 
