@@ -1,6 +1,6 @@
 <template>
     <div class="sblock container text-center p-3">
-        <img class="m-2" :src="require(`../assets/img/social/${logo}`)" :alt="title" height="100">
+        <img class="m-2" :src="require(`../assets/img/social/${logo}`)" :alt="title" height="50">
         <br>
         <a class="m-2 nav-link" :href="link">{{ title }}</a>
     </div>
@@ -32,6 +32,6 @@ export default {
 
 <style lang="scss" scoped>
     .sblock {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
     }
 </style>
