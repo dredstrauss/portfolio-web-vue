@@ -7,7 +7,8 @@
 
 <script>
 import { useStore } from 'vuex';
-import { computed } from 'vue';
+import { onMounted, computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 import Hero from '../components/Hero.vue'
 
@@ -20,6 +21,8 @@ export default {
     const store = useStore();
     const texts = computed(()=> store.state.texts);
     let lang = computed(() => store.state.lang);
+    const routes = useRoute();
+    const router = useRouter();
 
     const altLang = () => {
         const otherLang = lang.value === 'eng' ? 'esp' : 'eng';
@@ -32,6 +35,19 @@ export default {
         store.dispatch('getBlogTexts',lang.value);
 
     }
+
+    onMounted(() => {
+        const triedRoute = routes.path;
+        const avalaibleRoutes = router.getRoutes();
+        let found = 0
+        avalaibleRoutes.forEach((route) => {
+            if (route.path === triedRoute) {
+                router.push(triedRoute)
+                found = 1
+            }
+        });
+        if (!found) console.log('404');
+    })
 
     return {
       texts,
