@@ -32,7 +32,6 @@ export default {
 
 <style lang="scss" scoped>
     .sblock {
-        border: 1px solid gray;
-        border-radius: 5pt;
+        border-bottom: 1px solid gray;
     }
 </style>
