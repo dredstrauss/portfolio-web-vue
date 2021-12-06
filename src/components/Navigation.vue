@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
-            <router-link class="navbar-brand" to="/">PedroSG</router-link>
+            <router-link class="navbar-brand" to="/"><img class="logo" :src="require('../assets/img/pedrosg-logo.svg')" alt="Pedro SG"></router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,4 +36,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+    .logo {
+        height: 2rem;
+    }
+    .navbar {
+        height: 5rem;
+    }
+</style>
