@@ -26,7 +26,7 @@ export default createStore({
         Object.keys(payload).forEach((sectionKey) => {
             let sectionCapKey = sectionKey.charAt(0).toUpperCase() + sectionKey.slice(1);
             let name = payload[sectionKey];
-            let path = `/${name.toLowerCase()}`;
+            let path = `/${sectionKey}`;
             let component = () => import(`../views/${sectionCapKey}.vue`);
             router.addRoute({
                 path: path,
