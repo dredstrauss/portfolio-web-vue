@@ -7,9 +7,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarBar">
                 <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item">
-                        <a href="#" @click="switchLang" class="nav-link">[ {{ altLang() }} ]</a>
-                    </li>
                     <li class="nav-item" v-for="route in texts.site.menu" :key="route.path">
                         <template v-if="route.name !== 'Home'">
                             <router-link class="nav-link" :to="route.path">{{ route.name }}</router-link>
@@ -31,22 +28,8 @@ export default {
     setup() {
         const store = useStore();
         let texts = computed(()=> store.state.texts);
-        let lang = computed(() => store.state.lang);
-
-        const altLang = () => {
-            const otherLang = lang.value === 'eng' ? 'esp' : 'eng';
-            return otherLang
-        };
-
-        const switchLang = () => {
-            store.dispatch('switchLang',altLang());
-            store.dispatch('getTexts',lang.value);
-            store.dispatch('getBlogTexts',lang.value);
-        }
 
         return {
-            switchLang,
-            altLang,
             texts
         }
     }
