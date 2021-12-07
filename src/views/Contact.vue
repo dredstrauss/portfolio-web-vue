@@ -1,7 +1,16 @@
 <template>
   <Hero :title="texts.contact.hero.title" :subtitle="texts.contact.hero.subtitle" :bgimage="require(`@/assets/img/${texts.contact.hero.bgimage || texts.home.hero.bgimage}`)" />
 
-  <div class="row justify-content-evenly socialBlock">
+  <div class="row justify-content-evenly personalSection">
+      <div class="text-center mt-5 mb-3">
+          <h2>{{ texts.contact.personal.title }}</h2>
+      </div>
+      <div v-for="(acc, index) in personalAccounts" :key="index" class="col-10 col-sm-5 col-md-3 mb-5">
+          <SocialBlock :title="texts.contact[acc].title" :link="texts.contact[acc].link" :logo="texts.contact[acc].logo"/>
+      </div>
+  </div>
+
+  <div class="row justify-content-evenly socialSection">
       <div class="text-center mt-5 mb-3">
           <h2>{{ texts.contact.social.title }}</h2>
       </div>
@@ -9,6 +18,7 @@
           <SocialBlock :title="texts.contact[acc].title" :link="texts.contact[acc].link" :logo="texts.contact[acc].logo"/>
       </div>
   </div>
+
 </template>
 
 <script>
@@ -28,17 +38,23 @@ export default {
         const texts = computed(() => store.state.texts).value;
 
         const socialAccounts = ['linkedin','github','mastodon'];
+        const personalAccounts = ['email','telegram','matrix'];
 
         return {
             texts,
-            socialAccounts
+            socialAccounts,
+            personalAccounts
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    .socialBlock {
+    .personalSection {
+        border-bottom: 1px solid gray;
+        background-color: rgb(15,15,15);
+    }
+    .socialSection {
         border-bottom: 1px solid gray;
     }
 </style>
