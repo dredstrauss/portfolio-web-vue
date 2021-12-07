@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="texts.home.hero.title" :subtitle="texts.home.hero.subtitle" :bgimage="require(`@/assets/img/${texts.home.hero.bgimage}`)" />
+  <Hero :title="texts.home.hero.title" :subtitle="texts.home.hero.subtitle" :details="texts.home.hero.details" :bgimage="require(`@/assets/img/${texts.home.hero.bgimage}`)" />
   <div class="container text-center">
       <a href="#" class="nav-link" @click="switchLang">→ [{{ altLang() }}]</a>
   </div>

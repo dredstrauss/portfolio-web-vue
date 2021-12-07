@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="texts.about.hero.title" :subtitle="texts.about.hero.subtitle" :bgimage="require(`@/assets/img/${texts.about.hero.bgimage || texts.home.hero.bgimage}`)" />
+  <Hero :title="texts.about.hero.title" :subtitle="texts.about.hero.subtitle" :details="texts.about.hero.details" :bgimage="require(`@/assets/img/${texts.about.hero.bgimage || texts.home.hero.bgimage}`)" />
 </template>
 
 <script>

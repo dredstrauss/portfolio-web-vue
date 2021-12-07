@@ -4,6 +4,8 @@
             <div class="col-10 col-lg-6 ms-5">
                 <h1>{{ title }}</h1>
                 <h4>{{ subtitle }}</h4>
+                <br>
+                <p>{{ details }}</p>
             </div>
         </div>
     </section>
@@ -23,6 +25,10 @@ export default {
             default: ''
         },
         bgimage: {
+            type: String,
+            default: ''
+        },
+        details: {
             type: String,
             default: ''
         }

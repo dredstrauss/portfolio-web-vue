@@ -1,5 +1,5 @@
 <template>
-  <Hero :title="texts.contact.hero.title" :subtitle="texts.contact.hero.subtitle" :bgimage="require(`@/assets/img/${texts.contact.hero.bgimage || texts.home.hero.bgimage}`)" />
+  <Hero :title="texts.contact.hero.title" :subtitle="texts.contact.hero.subtitle" :details="texts.contact.hero.details" :bgimage="require(`@/assets/img/${texts.contact.hero.bgimage || texts.home.hero.bgimage}`)" />
 
   <div class="row justify-content-evenly personalSection">
       <div class="text-center mt-5 mb-3">
