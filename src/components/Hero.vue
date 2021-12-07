@@ -48,7 +48,7 @@ export default {
 <style lang="scss" scoped>
     section {
         border-top: 1px solid;
-        border-bottom: 2px solid;
+        border-bottom: 1px solid;
         border-color: rgba(200,200,200,1);
         background-color: black;
         background: linear-gradient(0deg,rgba(0,0,0,0.25), rgba(0,0,0,0.75)), var(--background-hero);
