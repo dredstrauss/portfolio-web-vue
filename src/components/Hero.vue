@@ -49,5 +49,6 @@ export default {
         background-size: cover;
         background-position: right;
         height: 50vh;
+        background-attachment: fixed;
     }
 </style>
