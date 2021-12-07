@@ -1,8 +1,8 @@
 <template>
-    <div class="sblock container text-center p-3">
+    <div class="container text-center p-4">
         <img class="m-2" :src="require(`../assets/img/social/${logo}`)" :alt="title" height="50">
         <br>
-        <a class="m-2 nav-link" :href="link">{{ title }}</a>
+        <a class="nav-link" :href="link" target="_blank">{{ title }}</a>
     </div>
 </template>
 
@@ -31,7 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .sblock {
-        border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
+    @import "../assets/custom.scss";
 </style>

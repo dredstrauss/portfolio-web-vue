@@ -1,7 +1,7 @@
 <template>
   <Hero :title="texts.contact.hero.title" :subtitle="texts.contact.hero.subtitle" :bgimage="require(`@/assets/img/${texts.contact.hero.bgimage || texts.home.hero.bgimage}`)" />
 
-  <div class="row justify-content-evenly socialBlock bg-dark">
+  <div class="row justify-content-evenly socialBlock">
       <div class="text-center mt-5 mb-3">
           <h2>{{ texts.contact.social.title }}</h2>
       </div>
@@ -38,7 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import "../assets/custom.scss";
     .socialBlock {
         border-bottom: 1px solid gray;
     }
