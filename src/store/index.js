@@ -1,6 +1,8 @@
 import { createStore } from 'vuex'
 import { router } from '../router'
 
+const apiURL = process.env.apiURL;
+
 export default createStore({
   state: {
     lang: 'eng'
@@ -40,7 +42,7 @@ export default createStore({
   actions: {
     async getTexts({commit},lang) {
       try {
-        const response = await fetch(`http://bookapi.pedrosg.com/lang-strings?lang=${lang}`);
+        const response = await fetch(`${apiURL}/lang-strings?lang=${lang}`);
         const result = await response.json();
         commit('setTexts', result);
         commit('setRoutes', result.site.nav);
@@ -51,7 +53,7 @@ export default createStore({
     },
     async getBlogTexts({commit},lang) {
       try {
-        const response = await fetch(`http://bookapi.pedrosg.com/blog-strings?lang=${lang}`);
+        const response = await fetch(`${apiURL}/blog-strings?lang=${lang}`);
         const result = await response.json();
         commit('setBlogTexts', result);
         return result
