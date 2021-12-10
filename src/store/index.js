@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import { router } from '../router'
 
-const apiURL = process.env.apiURL;
+const apiURL = process.env.APIURL;
 
 export default createStore({
   state: {
