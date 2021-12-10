@@ -12,3 +12,7 @@ $link-color: #fff;
 $font-family-sans-serif: 'Volkhov', serif;
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+#navbarBar {
+    background-color: $dark-blue-pedrosg;
+}

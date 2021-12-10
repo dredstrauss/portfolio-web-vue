@@ -54,7 +54,7 @@ export default {
         background: linear-gradient(0deg,rgba(0,0,0,0.25), rgba(0,0,0,0.75)), var(--background-hero);
         background-size: cover;
         background-position: right;
-        height: 60vh;
+        min-height: 60vh;
         background-attachment: fixed;
     }
 </style>

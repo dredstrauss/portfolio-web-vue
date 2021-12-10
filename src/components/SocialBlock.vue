@@ -1,5 +1,5 @@
 <template>
-    <div class="container text-center p-4">
+    <div class="text-center p-4">
         <img class="m-2" :src="require(`../assets/img/social/${logo}`)" :alt="title" height="50">
         <br>
         <a class="nav-link" :href="link" target="_blank">{{ title }}</a>
@@ -32,4 +32,7 @@ export default {
 
 <style lang="scss" scoped>
     @import "../assets/custom.scss";
+    a {
+        word-wrap: break-word;
+    }
 </style>
