@@ -42,6 +42,8 @@ export default {
         }
     });
 
+    document.title = 'Pedro SG';
+
     return {
       texts
     }
