@@ -20,11 +20,11 @@ export default createStore({
     },
     setRoutes(state, payload){
         state.texts.site.menu = [];
-        router.getRoutes().forEach(route => {
-            if (route.name !== 'Home') {
-                router.removeRoute(route.name)
-            }
-        });
+        // router.getRoutes().forEach(route => {
+        //     if (route.name !== 'Home') {
+        //         router.removeRoute(route.name)
+        //     }
+        // }); // seems irrelevante thanks to the usage of the same route names in both langs
         Object.keys(payload).forEach((sectionKey) => {
             let sectionCapKey = sectionKey.charAt(0).toUpperCase() + sectionKey.slice(1);
             let name = payload[sectionKey];
