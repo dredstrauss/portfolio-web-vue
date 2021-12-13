@@ -6,6 +6,7 @@
                     <hr class="mt-3">
                     <h4>{{ item.name }}</h4>
                     <p>{{ item.shortdesc }}</p>
+                    <router-link class="nav-link" :to="'/projects/' + item.url">{{ texts.projects.page.readmore }}</router-link>
             </div>
           </div>
       </section>
@@ -13,6 +14,8 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
+
 export default {
     name: 'PreviewItems',
     props: {
@@ -22,6 +25,14 @@ export default {
                 name: ' ',
                 shortdesc: ''
             }]
+        }
+    },
+    setup() {
+        const store = useStore();
+        const texts = store.state.texts;
+
+        return {
+            texts
         }
     }
 }
