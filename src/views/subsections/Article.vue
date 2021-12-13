@@ -5,9 +5,9 @@
             <h1 class="mt-5">{{ article.title }}</h1>
             <p class="text-muted fw-bold">{{ article.author }} ({{ article.date }})</p>
             <hr>
-            <p class="mt-3">{{ article.summary }}</p>
+            <p class="mt-3 text-muted">{{ article.summary }}</p>
             <hr class="text-muted">
-            <p>{{ article.body }}</p>
+            <div v-html="parsedBody"></div>
             <hr class="mt-5 text-muted">
         </div>
 
@@ -25,6 +25,7 @@
 import { useStore } from 'vuex'
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import { marked } from 'marked';
 
 import Hero from '../../components/Hero.vue'
 
@@ -41,7 +42,8 @@ export default {
         let article = ref({});
 
         let slug = '...';
-        let articles = '...'
+        let articles = '...';
+        let parsedBody = ref('');
 
         store.dispatch('getBlogTexts',store.state.lang).then(() => {
             slug = route.params.slug;
@@ -51,6 +53,7 @@ export default {
                 article.value = articles.value[slug];
                 let date = new Date(article.value.created);
                 article.value.date = `${date.getMonth()+1} - ${date.getFullYear()}`;
+                parsedBody.value = marked(article.value.body);
             } else {
                 article.value = false
             }
@@ -58,7 +61,8 @@ export default {
 
         return {
             texts,
-            article
+            article,
+            parsedBody
         }
     }
 }
