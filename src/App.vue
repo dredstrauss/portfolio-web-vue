@@ -38,7 +38,6 @@ export default {
             let localLang = localStorage.getItem('lang');
             store.dispatch('switchLang',localLang)
             store.dispatch('getTexts',lang.value)
-            store.dispatch('getBlogTexts',lang.value);
         }
     });
 

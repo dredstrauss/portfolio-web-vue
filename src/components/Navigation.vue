@@ -7,10 +7,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarBar">
                 <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item" v-for="route in texts.site.menu" :key="route.path">
-                        <template v-if="route.name !== 'Home'">
-                            <router-link class="nav-link" :to="route.path">{{ route.name }}</router-link>
-                        </template>
+                    <li class="nav-item" v-for="(route, index) in texts.site.nav" :key="index">
+                        <router-link class="nav-link" :to="'/' + index">{{ route }}</router-link>
                     </li>
                 </ul>
             </div>
