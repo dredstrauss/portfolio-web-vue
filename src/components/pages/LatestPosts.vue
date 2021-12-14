@@ -5,7 +5,7 @@
         <div class="col-11 col-sm-6 col-md-4" v-for="(post, index) in posts" :key="index">
             <hr class="mt-3">
             <h4>{{ post.title }}</h4>
-            <p class="fw-bold mb-3">{{ post.summary }}</p>
+            <p class="text-muted mb-3">{{ post.summary }}</p>
             <router-link class="nav-link" :to="'/blog/' + index">{{ texts.blog.article.readmore }}</router-link>
         </div>
       </div>

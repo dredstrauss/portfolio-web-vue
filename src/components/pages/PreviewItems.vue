@@ -5,7 +5,7 @@
             <div class="col-11 col-sm-6 col-md-4" v-for="(item, index) in items" :key="index" >
                     <hr class="mt-3">
                     <h4>{{ item.name }}</h4>
-                    <p>{{ item.shortdesc }}</p>
+                    <p class="text-muted">{{ item.shortdesc }}</p>
                     <router-link class="nav-link" :to="'/projects/' + item.url">{{ texts.projects.page.readmore }}</router-link>
             </div>
           </div>

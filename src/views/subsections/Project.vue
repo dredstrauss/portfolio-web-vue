@@ -1,10 +1,10 @@
 <template lang="html">
     <Hero :bgimage="require(`@/assets/img/${texts.projects.hero.bgimage || texts.home.hero.bgimage}`)" />
-    <div class="row justify-content-center container-fluid gx-5">
+    <div class="row justify-content-center container-fluid gx-3 gx-sm-5">
 
         <template v-if="project">
 
-            <div class="col-4 mt-5 p-4 specsBlock">
+            <div class="col-12 col-sm-5 col-md-4 mt-5 p-4 specsBlock">
                 <h3>{{ texts.projects.page.techs }}:</h3>
                 <p>{{ project.techs }}</p>
                 <br>
@@ -13,7 +13,7 @@
                 <a class="nav-link text-center p-4 text-primary" :href="project.link" target="_blank">{{ texts.projects.page.link }}</a>
             </div>
 
-            <div class="col-6 mt-5">
+            <div class="col-12 col-sm-7 col-md-6 mt-5">
                 <h1>{{ project.name }}</h1>
                 <hr>
                 <div v-html="parsedBody"></div>

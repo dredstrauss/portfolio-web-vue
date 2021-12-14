@@ -1,7 +1,8 @@
 <template lang="html">
     <Hero :bgimage="require(`@/assets/img/${texts.blog.hero.bgimage || texts.home.hero.bgimage}`)" />
     <div class="row justify-content-center container-fluid">
-        <div v-if="article" class="container col-6">
+
+        <div v-if="article" class="container col-12 col-sm-10 col-md-6">
             <h1 class="mt-5">{{ article.title }}</h1>
             <p class="text-muted fw-bold">{{ article.author }} ({{ article.date }})</p>
             <hr>
@@ -13,7 +14,7 @@
 
         <div v-else>
             <hr class="container mt-5">
-            <h3 class="my-5 container col-6 text-danger text-center">{{ texts.blog.article.notfound }}</h3>
+            <h3 class="my-5 container col-12 col-sm-10 col-md-6 text-danger text-center">{{ texts.blog.article.notfound }}</h3>
             <hr class="container mt-5">
         </div>
 
