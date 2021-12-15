@@ -40,3 +40,40 @@ p {
 hr {
     margin-bottom: 1.5em;
 }
+
+code {
+    color: $gray-200;
+    background-color: $blue-pedrosg;
+    padding: 0.2em 0.5em;
+    border-radius: 0.25em;
+    font-family: $font-sans;
+    font-weight: lighter;
+}
+
+table {
+    margin-bottom: 1rem;
+    background-color: $gray-900;
+    font-family: $font-sans;
+    display: block;
+    overflow-x: scroll;
+    font-size: 0.75em;
+
+    thead {
+        text-align: center;
+        border-bottom: solid 1px $gray-400;
+        text-transform: uppercase;
+
+        th {
+            border-left: solid 1px $gray-700;
+            padding: 0.5em 2em;
+        }
+    }
+
+    tbody {
+        tr {
+            text-align: center;
+            border-bottom: solid 1px $gray-600;
+            padding: 1em 1em;
+        }
+    }
+}
