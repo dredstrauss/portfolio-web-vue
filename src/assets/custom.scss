@@ -1,16 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Playfair+Display:wght@700&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 $dark-blue-pedrosg: #070b15;
 $blue-pedrosg: #0b1728;
+
+$font-serif: 'Source Serif Pro', serif;
+$font-titles: 'Playfair Display', serif;
+$font-sans: 'Open Sans', sans-serif;
 
 $body-bg: $dark-blue-pedrosg;
 $body-color: #ced4da;
 $link-color: #fff;
 
-$font-family-sans-serif: 'Volkhov', serif;
+$font-family-sans-serif: $font-serif;
+$font-family-monospace: $font-sans;
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 #navbarBar {
     background-color: $dark-blue-pedrosg;
+}
+
+.sansed {
+    font-family: $font-sans;
+}
+
+.serifed {
+    font-family: $font-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    font-family: $font-titles;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+hr {
+    margin-bottom: 1.5em;
 }

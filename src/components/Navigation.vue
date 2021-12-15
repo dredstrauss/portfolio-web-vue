@@ -6,7 +6,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarBar">
-                <ul class="navbar-nav ms-auto text-center">
+                <ul class="navbar-nav ms-auto text-center sansed">
                     <li class="nav-item" v-for="(route, index) in texts.site.nav" :key="index">
                         <router-link class="nav-link" :to="'/' + index">{{ route }}</router-link>
                     </li>

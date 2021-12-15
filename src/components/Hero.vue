@@ -1,9 +1,9 @@
 <template>
     <section class="py-5" :style="cssProps" >
         <div class="row container mt-5" >
-            <div class="col-10 col-lg-6 ms-5">
-                <h1>{{ title }}</h1>
-                <h4>{{ subtitle }}</h4>
+            <div class="col-11 col-sm-10 col-md-8 col-lg-6 ms-3 ms-lg-5">
+                <h1 class="serifed">{{ title }}</h1>
+                <h4 class="serifed">{{ subtitle }}</h4>
                 <br>
                 <p>{{ details }}</p>
             </div>
@@ -55,5 +55,10 @@ export default {
         background-size: cover;
         background-position: right;
         background-attachment: fixed;
+
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+        }
     }
 </style>
