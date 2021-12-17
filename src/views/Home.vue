@@ -3,6 +3,9 @@
   <div class="langBar text-center">
       <a href="#" class="nav-link" @click="switchLang">[ {{ altLang() }} ]</a>
   </div>
+  <div class="p-5 text-center text-muted fst-italic">
+      <p>{{ texts.home.notes.underconstruction }}</p>
+  </div>
 </template>
 
 <script>
