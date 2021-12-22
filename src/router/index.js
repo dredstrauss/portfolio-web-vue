@@ -6,6 +6,7 @@ import Projects from '../views/Projects.vue'
 import Project from '../views/subsections/Project.vue'
 import Contact from '../views/Contact.vue'
 import About from '../views/About.vue'
+import MarkdownEditor from '../views/MarkdownEditor.vue'
 
 const routes = [
     {
@@ -47,6 +48,11 @@ const routes = [
         path: '/:catchAll(.*)',
         name: 'Redirect',
         component: Home
+    },
+    {
+        path: '/editor',
+        name: 'Markdown Editor',
+        component: MarkdownEditor
     }
 ]
 
