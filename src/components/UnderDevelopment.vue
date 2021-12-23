@@ -1,6 +1,8 @@
 <template lang="html">
-    <div class="p-3 my-5 text-center text-muted fst-italic container boxed">
-        <p class="m-0 p-0">{{ texts.home.notes.underconstruction }}</p>
+    <div class="container-fluid">
+        <div class="p-3 my-5 text-center text-muted fst-italic container boxed">
+            <p class="m-0 p-0">{{ texts.home.notes.underconstruction }}</p>
+        </div>
     </div>
 </template>
 
