@@ -38,7 +38,7 @@ export default {
 
     return {
       texts,
-      blogTexts: blogTexts.value
+      blogTexts: blogTexts
     }
   }
 }
