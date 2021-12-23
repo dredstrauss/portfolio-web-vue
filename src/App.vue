@@ -5,6 +5,7 @@
   </div>
   <div v-else>
     <Navigation />
+    <UnderDevelopment />
     <Footer />
   </div>
 
@@ -17,13 +18,15 @@ import { useStore} from 'vuex';
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import SpinningWheel from './components/SpinningWheel.vue'
+import UnderDevelopment from './components/UnderDevelopment.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
     Footer,
-    SpinningWheel
+    SpinningWheel,
+    UnderDevelopment
   },
   setup() {
     const store = useStore();
