@@ -7,8 +7,8 @@
 
     <Hero :title="texts.blog.hero.title" :subtitle="texts.blog.hero.subtitle" :details="texts.blog.hero.details" :bgimage="require(`@/assets/img/${texts.blog.hero.bgimage || texts.home.hero.bgimage}`)" />
     <LatestPosts :posts="blogTexts" />
-
   </div>
+
 
 </template>
 

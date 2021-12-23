@@ -23,12 +23,12 @@
 
   </div>
 
-
 </template>
 
 <script>
 import Hero from '../components/Hero.vue';
 import SocialBlock from '../components/SocialBlock.vue'
+
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 

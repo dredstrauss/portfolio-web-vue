@@ -16,6 +16,12 @@ $font-family-monospace: $font-sans;
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
+.main-section {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
 #navbarBar {
     background-color: $dark-blue-pedrosg;
 }
