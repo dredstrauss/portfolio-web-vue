@@ -2,10 +2,10 @@
     <section class="py-5" :style="cssProps" >
         <div class="row container mt-5" >
             <div class="col-11 col-sm-10 col-md-8 col-lg-6 ms-3 ms-lg-5">
-                <h1 class="serifed">{{ title }}</h1>
-                <h4 class="serifed">{{ subtitle }}</h4>
+                <h1 v-for="(element, index) in title" :key="index" class="serifed">{{ element }}</h1>
+                <h4 v-for="(element, index) in subtitle" :key="index" class="serifed">{{ element }}</h4>
                 <br>
-                <p>{{ details }}</p>
+                <p v-for="(element, index) in details" :key="index">{{ element }}</p>
             </div>
         </div>
     </section>
@@ -17,20 +17,20 @@ export default {
     name: 'Hero',
     props: {
         title: {
-            type: String,
-            default: ''
+            type: Array,
+            default: []
         },
         subtitle: {
-            type: String,
-            default: ''
+            type: Array,
+            default: []
         },
         bgimage: {
             type: String,
             default: ''
         },
         details: {
-            type: String,
-            default: ''
+            type: Array,
+            default: []
         }
     },
     setup(props) {

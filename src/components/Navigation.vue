@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarBar">
                 <ul class="navbar-nav ms-auto text-center sansed">
                     <li class="nav-item" v-for="(route, index) in texts.site.nav" :key="index">
-                        <router-link class="nav-link" :to="'/' + index">{{ route }}</router-link>
+                        <router-link class="nav-link" :to="'/' + index">{{ route[0] }}</router-link>
                     </li>
                 </ul>
             </div>

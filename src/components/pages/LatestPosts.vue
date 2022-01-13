@@ -6,7 +6,7 @@
             <hr class="mt-3">
             <h4>{{ post.title }}</h4>
             <p class="text-muted mb-3">{{ post.summary }}</p>
-            <router-link class="nav-link" :to="'/blog/' + index">{{ texts.blog.article.readmore }}</router-link>
+            <router-link class="nav-link" :to="'/blog/' + index">{{ texts.blog.article.readmore[0] }}</router-link>
         </div>
       </div>
     </section>

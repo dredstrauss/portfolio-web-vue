@@ -5,16 +5,16 @@
         <template v-if="project">
 
             <div class="col-12 col-sm-5 col-md-4 mt-5 p-4 specsBlock">
-                <h3>{{ texts.projects.page.techs }}:</h3>
-                <p>{{ project.techs }}</p>
+                <h3>{{ texts.projects.page.techs[0] }}:</h3>
+                <p>{{ project.techs[0] }}</p>
                 <br>
-                <h3>{{ texts.projects.page.shortdesc }}:</h3>
-                <p>{{ project.shortdesc }}</p>
-                <a class="nav-link text-center p-4 text-primary" :href="project.link" target="_blank">{{ texts.projects.page.link }}</a>
+                <h3>{{ texts.projects.page.shortdesc[0] }}:</h3>
+                <p v-for="(e, i) in project.shortdesc" in :key="i">{{ e }}</p>
+                <a class="nav-link text-center p-4 text-primary" :href="project.link[0]" target="_blank">{{ texts.projects.page.link[0] }}</a>
             </div>
 
             <div class="col-12 col-sm-7 col-md-6 mt-5">
-                <h1>{{ project.name }}</h1>
+                <h1 v-for="(e,i) in project.name" :key="i">{{ e }}</h1>
                 <hr>
                 <div v-html="parsedBody"></div>
                 <hr class="mt-5 text-muted">
@@ -24,11 +24,11 @@
 
         <div v-else>
             <hr class="container mt-5">
-            <h3 class="my-5 container col-6 text-danger text-center">{{ texts.blog.article.notfound }}</h3>
+            <h3 class="my-5 container col-6 text-danger text-center">{{ texts.blog.article.notfound[0] }}</h3>
             <hr class="container mt-5">
         </div>
 
-        <router-link class="nav-link text-center" :to="{ name: 'Projects'}">{{ texts.site.generic.goback }}</router-link>
+        <router-link class="nav-link text-center" :to="{ name: 'Projects'}">{{ texts.site.generic.goback[0] }}</router-link>
     </div>
 </template>
 
@@ -52,7 +52,8 @@ export default {
 
         const projectName = route.params.project;
         const project = texts.value.projects_list[projectName] || false;
-        const parsedBody = marked(project.body);
+
+        const parsedBody = marked(project.body.join('\n'));
 
         return {
             texts,

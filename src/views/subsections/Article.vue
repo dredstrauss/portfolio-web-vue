@@ -18,7 +18,7 @@
             <hr class="container mt-5">
         </div>
 
-        <router-link class="nav-link text-center" :to="{ name: 'Blog'}">{{ texts.site.generic.goback }}</router-link>
+        <router-link class="nav-link text-center" :to="{ name: 'Blog'}">{{ texts.site.generic.goback[0] }}</router-link>
     </div>
 </template>
 

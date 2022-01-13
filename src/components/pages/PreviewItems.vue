@@ -4,9 +4,9 @@
           <div class="row justify-content-center">
             <div class="col-11 col-sm-6 col-md-4" v-for="(item, index) in items" :key="index" >
                     <hr class="mt-3">
-                    <h4>{{ item.name }}</h4>
-                    <p class="text-muted">{{ item.shortdesc }}</p>
-                    <router-link class="nav-link" :to="'/projects/' + item.url">{{ texts.projects.page.readmore }}</router-link>
+                    <h4>{{ item.name[0] }}</h4>
+                    <p v-for="(e, i) in item.shortdesc" :key="i" class="text-muted">{{ e }}</p>
+                    <router-link class="nav-link" :to="'/projects/' + item.url">{{ texts.projects.page.readmore[0] }}</router-link>
             </div>
           </div>
       </section>
