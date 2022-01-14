@@ -1,5 +1,5 @@
 <template>
-  <Hero title="Editor" subtitle="-> Markdown" :bgimage="require(`@/assets/img/${texts.home.hero.bgimage}`)" />
+  <Hero :title="editorTexts[0]" :subtitle="editorTexts[1]" :bgimage="require(`@/assets/img/${texts.home.hero.bgimage}`)" />
   <div class="row container my-3">
       <div class="col-12 col-md-6">
           <textarea class="form-control" id="rawText" @change="parseContent()"></textarea>
@@ -25,6 +25,11 @@ export default {
     const store = useStore();
     let texts = computed(()=>store.state.texts);
 
+    let editorTexts = [
+        ["Editor"],
+        ["-> Markdown"]
+    ]
+
     const parseContent = () => {
         let raw = document.getElementById('rawText').value;
         let output = document.getElementById('parsedText');
@@ -34,6 +39,7 @@ export default {
 
     return {
       texts,
+      editorTexts,
       parseContent
     }
   }
