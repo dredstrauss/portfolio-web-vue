@@ -1,7 +1,7 @@
 <template lang="html">
     <section class="py-5 container-fluid" :style="cssProps">
 
-        <div class="row mx-5">
+        <div class="row mx-0 mx-sm-5">
 
             <div class="col-12 col-md-4 p-5 columnaTitular" :class="order[0]">
                 <h2 v-for="(e,i) in title" :key="i">{{ e }}</h2>
