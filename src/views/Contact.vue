@@ -5,19 +5,19 @@
 
       <div class="row justify-content-center personalSection">
           <div class="text-center mt-5 mb-3">
-              <h2>{{ texts.contact.personal.title }}</h2>
+              <h2>{{ texts.contact.personal.title[0] }}</h2>
           </div>
           <div v-for="(acc, index) in personalAccounts" :key="index" class="col-12 col-sm-6 col-md-4 mb-5">
-              <SocialBlock :title="texts.contact[acc].title" :link="texts.contact[acc].link" :logo="texts.contact[acc].logo"/>
+              <SocialBlock :title="texts.contact[acc].title[0]" :link="texts.contact[acc].link[0]" :logo="texts.contact[acc].logo"/>
           </div>
       </div>
 
       <div class="row justify-content-center socialSection">
           <div class="text-center mt-5 mb-3">
-              <h2>{{ texts.contact.social.title }}</h2>
+              <h2>{{ texts.contact.social.title[0] }}</h2>
           </div>
           <div v-for="(acc, index) in socialAccounts" :key="index" class="col-12 col-sm-6 col-md-4 mb-5">
-              <SocialBlock :title="texts.contact[acc].title" :link="texts.contact[acc].link" :logo="texts.contact[acc].logo"/>
+              <SocialBlock :title="texts.contact[acc].title[0]" :link="texts.contact[acc].link[0]" :logo="texts.contact[acc].logo"/>
           </div>
       </div>
 
