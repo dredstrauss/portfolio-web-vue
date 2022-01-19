@@ -6,6 +6,11 @@
                     <hr class="mt-3">
                     <h4>{{ item.name[0] }}</h4>
                     <p v-for="(e, i) in item.shortdesc" :key="i" class="text-muted">{{ e }}</p>
+                    <p>
+                        <span v-for="(tech,index) in item.techsArr" :key="index" class="mx-1">
+                            <img :src="require(`@/assets/img/techs/${tech}.png`)" :alt="tech" width="50">
+                        </span>
+                    </p>
                     <router-link class="nav-link" :to="'/projects/' + item.url">{{ texts.projects.page.readmore[0] }}</router-link>
             </div>
           </div>
@@ -27,7 +32,7 @@ export default {
             }]
         }
     },
-    setup() {
+    setup(props) {
         const store = useStore();
         const texts = store.state.texts;
 
