@@ -6,6 +6,12 @@
             <div class="col-12 col-md-4 p-5 columnaTitular" :class="order[0]">
                 <h2 v-for="(e,i) in title" :key="i">{{ e }}</h2>
                 <p v-for="(e,i) in shortDesc" :key="i">{{ e }}</p>
+                <template v-if="title == 'Programación' || title == 'Programming'">
+                    <hr>
+                    <span v-for="(tech, index) in allTechs" :key="index">
+                        <img class="m-1" :src="require(`@/assets/img/techs/${tech}.png`)" :alt="`${tech} logo`" width="50">
+                    </span>
+                </template>
             </div>
 
             <div class="col-12 col-md-8 p-5" :class="order[1]">
@@ -44,6 +50,10 @@ export default {
         inverted: {
             type: Number,
             default: 0
+        },
+        allTechs: {
+            type: Array,
+            default: []
         }
     },
     setup(props) {
@@ -52,6 +62,8 @@ export default {
         items.forEach((item) => {
             parsedItems.push(marked(item))
         });
+
+        const allTechs = props.allTechs;
 
         const bgImage = props.bgImage;
         const cssProps = { '--background-block': `url(${bgImage})` };
@@ -63,7 +75,8 @@ export default {
             cssProps,
             bgImage,
             parsedItems,
-            order
+            order,
+            allTechs
         }
     }
 }

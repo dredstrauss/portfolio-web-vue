@@ -2,7 +2,7 @@
   <Hero :title="texts.about.hero.title" :subtitle="texts.about.hero.subtitle" :details="texts.about.hero.details" :bgimage="require(`@/assets/img/${texts.about.hero.bgimage[0] || texts.home.hero.bgimage}`)" />
 
   <template v-for="(background, index) in bloques" :key="index">
-      <BackgroundBlock :title="background.title" :shortDesc="background.short_description" :bItems="background.item" :bgImage="require(`@/assets/img/${background.img[0] || texts.home.hero.bgimage[0] }`)" :inverted="index" />
+      <BackgroundBlock :title="background.title" :shortDesc="background.short_description" :bItems="background.item" :bgImage="require(`@/assets/img/${background.img[0] || texts.home.hero.bgimage[0] }`)" :inverted="index" :allTechs="allTechs" />
   </template>
 
 </template>
@@ -29,9 +29,21 @@ export default {
     }
     bloques = bloques.reverse()
 
+    let allTechs = [];
+    let projects = JSON.parse(JSON.stringify(texts.value.projects_list));
+    Object.keys(projects).forEach((project, index) => {
+        let someTechs = projects[project].techs[0].split(', ');
+        someTechs.forEach((tech, i) => {
+            someTechs[i] = tech.toLowerCase();
+        });
+        allTechs = allTechs.concat(someTechs);
+        allTechs = [...new Set(allTechs)];
+    });
+
     return {
       texts,
-      bloques
+      bloques,
+      allTechs
     }
   }
 }
