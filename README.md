@@ -1,19 +1,7 @@
-# portfolio-web-vue
+# Personal portfolio
 
-## Project setup
-```
-npm install
-```
+This is my personal portfolio website source code.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+If you're reading this, you're probably checking if I do know how to code stuff. I'm still learning but I'm trying my best to get better and start my way into this programming world. Thanks for your attention!
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Result -> https://dev.pedrosg.com 
