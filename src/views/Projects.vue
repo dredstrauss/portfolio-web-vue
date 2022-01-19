@@ -22,7 +22,7 @@ export default {
       const projectsArray = () => {
         let arr = [];
         Object.keys(texts.value.projects_list).forEach((project) => {
-          let proj = texts.value.projects_list[project];
+          let proj = JSON.parse(JSON.stringify(texts.value.projects_list[project]));
           proj.url = project;
           proj.techsArr = texts.value.projects_list[project].techs[0].split(', ');
           proj.techsArr.forEach((tech,i) => {

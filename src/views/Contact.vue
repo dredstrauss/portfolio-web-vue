@@ -8,7 +8,7 @@
               <h2>{{ texts.contact.personal.title[0] }}</h2>
           </div>
           <div v-for="(acc, index) in personalAccounts" :key="index" class="col-12 col-sm-6 col-md-4 mb-5">
-              <SocialBlock :title="texts.contact[acc].title[0]" :link="texts.contact[acc].link[0]" :logo="texts.contact[acc].logo"/>
+              <SocialBlock :title="texts.contact[acc].title[0]" :link="texts.contact[acc].link[0]" :logo="texts.contact[acc].logo[0]"/>
           </div>
       </div>
 
@@ -17,7 +17,7 @@
               <h2>{{ texts.contact.social.title[0] }}</h2>
           </div>
           <div v-for="(acc, index) in socialAccounts" :key="index" class="col-12 col-sm-6 col-md-4 mb-5">
-              <SocialBlock :title="texts.contact[acc].title[0]" :link="texts.contact[acc].link[0]" :logo="texts.contact[acc].logo"/>
+              <SocialBlock :title="texts.contact[acc].title[0]" :link="texts.contact[acc].link[0]" :logo="texts.contact[acc].logo[0]"/>
           </div>
       </div>
 
