@@ -31,7 +31,7 @@ export default {
 
     let allTechs = [];
     let projects = JSON.parse(JSON.stringify(texts.value.projects_list));
-    Object.keys(projects).forEach((project, index) => {
+    Object.keys(projects).forEach((project) => {
         let someTechs = projects[project].techs[0].split(', ');
         someTechs.forEach((tech, i) => {
             someTechs[i] = tech.toLowerCase();
