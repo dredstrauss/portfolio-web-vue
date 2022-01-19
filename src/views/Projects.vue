@@ -24,6 +24,10 @@ export default {
         Object.keys(texts.value.projects_list).forEach((project) => {
           let proj = texts.value.projects_list[project];
           proj.url = project;
+          proj.techsArr = texts.value.projects_list[project].techs[0].split(', ');
+          proj.techsArr.forEach((tech,i) => {
+              proj.techsArr[i] = tech.toLowerCase();
+          });
           arr.push(proj);
         })
         return arr

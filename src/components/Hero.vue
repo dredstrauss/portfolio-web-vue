@@ -53,7 +53,7 @@ export default {
         background-color: black;
         background: linear-gradient(0deg,rgba(0,0,0,0.25), rgba(0,0,0,0.75)), var(--background-hero);
         background-size: cover;
-        background-position: right;
+        background-position: center;
         background-attachment: fixed;
 
         h1 {

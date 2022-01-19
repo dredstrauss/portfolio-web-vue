@@ -1,7 +1,16 @@
 <template>
   <Hero :title="texts.home.hero.title" :subtitle="texts.home.hero.subtitle" :details="texts.home.hero.details" :bgimage="require(`@/assets/img/${texts.home.hero.bgimage}`)" />
+
   <div class="langBar text-center">
       <a href="#" class="nav-link" @click="switchLang">[ {{ altLang() }} ]</a>
+  </div>
+
+  <div class="container-fluid row justify-content-evenly">
+      <template v-for="(tech, i) in allTechs" :key="i">
+          <div class="col text-center mt-5">
+              <img :src="require(`@/assets/img/techs/${tech}.png`)" :alt="tech" width="50">
+          </div>
+      </template>
   </div>
 </template>
 
@@ -49,10 +58,22 @@ export default {
         if (!found) console.log('404');
     })
 
+    let allTechs = [];
+    let projects = JSON.parse(JSON.stringify(texts.value.projects_list));
+    Object.keys(projects).forEach((project, index) => {
+        let someTechs = projects[project].techs[0].split(', ');
+        someTechs.forEach((tech, i) => {
+            someTechs[i] = tech.toLowerCase();
+        });
+        allTechs = allTechs.concat(someTechs);
+        allTechs = [...new Set(allTechs)];
+    });
+
     return {
       texts,
       altLang,
-      switchLang
+      switchLang,
+      allTechs
     }
   }
 }
