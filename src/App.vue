@@ -5,7 +5,7 @@
   </div>
   <div v-else>
     <Navigation />
-    <UnderDevelopment />
+    <hr class="container mt-5">
     <Footer />
   </div>
 
@@ -18,15 +18,13 @@ import { useStore} from 'vuex';
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import SpinningWheel from './components/SpinningWheel.vue'
-import UnderDevelopment from './components/UnderDevelopment.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
     Footer,
-    SpinningWheel,
-    UnderDevelopment
+    SpinningWheel
   },
   setup() {
     const store = useStore();
